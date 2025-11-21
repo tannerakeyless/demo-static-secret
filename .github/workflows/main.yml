@@ -15,10 +15,10 @@ jobs:
           access-type: jwt
           export-secrets-to-outputs: true
           export-secrets-to-environment: true
+          api-url: "https://csm.thalescryptolabs.com/akeyless-api/v2/"
           static-secrets: |
             - name: "/secret/Jenkins/Jenkins"
               output-name: "my_first_secret"
-              api-url: "https://csm.thalescryptolabs.com/akeyless-api/v2/"
       - name: Use Akeyless secret (environment variable)
         env:
           SECRET: ${{ env.my_first_secret }}
